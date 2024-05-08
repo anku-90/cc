@@ -1,0 +1,29 @@
+2 (console google cloud)
+
+here first create a project
+enable the admin api and then start the cloud shell
+
+type gcloud auth list
+mkdir ~/abc
+cd ~/abc
+touch main.py:
+{
+  import flask
+  app = flask.Flask(__name__)
+
+
+  @app.get("/")
+  def hello():
+    """Return a friendly HTTP greeting."""
+    return "Hello World have a great day!\n"
+
+
+  if __name__ == "__main__":
+    app.run(host="localhost", port=8080, debug=True)
+}
+cloudshell edit main.py
+requirements.txt
+  flask==3.0.2
+app.yaml
+  runtime: python312
+gcloud app deploy
